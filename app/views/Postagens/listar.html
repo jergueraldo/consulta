@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<table>
+
+    <tr>
+        <th>titulo</th>
+        <th>conteudo</th>
+        <th>autor</th>
+        <th>data</th>
+        <th>remoção</th>
+    </tr>
+
+    #{list items: lista, as: 'registro'}
+
+    <tr>
+        <td>${registro.titulo}</td>
+        <td>${registro.conteudo}</td>
+        <td>${registro.autor}</td>
+        <td>${registro.data.format("dd/MM/yyyy")}</td>
+        <td><a href="@{Postagens.remover(registro.id)}">Remover</a></td>
+
+    </tr>
+
+
+    #{/list}
+
+
+
+</table>
